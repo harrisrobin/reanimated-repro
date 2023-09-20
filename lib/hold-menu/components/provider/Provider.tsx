@@ -52,6 +52,7 @@ const ProviderComponent = ({
     transformValue: 0,
     actionParams: {},
   });
+  const [items, setItems] = React.useState([]);
 
   useEffect(() => {
     theme.value = selectedTheme || 'light';
@@ -90,8 +91,10 @@ const ProviderComponent = ({
         left: 0,
         right: 0,
       },
+      items,
+      setItems,
     }),
-    [state, theme, menuProps, safeAreaInsets],
+    [state, theme, menuProps, safeAreaInsets, items, setItems],
   );
 
   return (
